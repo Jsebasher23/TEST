@@ -1,0 +1,75 @@
+﻿@model IEnumerable<EmployeeTest.Models.Employee>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractTypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HourlySalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonthlySalary)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Salary)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractTypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HourlySalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonthlySalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Salary)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
